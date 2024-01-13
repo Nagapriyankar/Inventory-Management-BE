@@ -23,7 +23,7 @@ app.use("/api/users",userRoute)
 
 //test root route
 app.get("/", (req, res) => { 
-    res.send('Home Page')
+    res.send('Backend Application - Inventory Management Application')
 })
 
 
