@@ -33,7 +33,7 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
         if (err) {
             console.log("Error: ", err)
         } else { 
-            console.log("Info: ", info)
+            console.log("Info: ", "mail sent successful")
         }
     })
 }

@@ -12,7 +12,7 @@ router.get("/loggedin", loginStatus) //to check if user logged in
 router.patch("/updateuser", protect, updateUser) //to update user provided details
 router.patch("/changepwd", protect,  changePwd) //to change pwd
 router.post("/forgotpwd",  forgotPwd) //to forget pwd and get link in email
-router.put("/resetpwd/:resetToken", protect,  resetPwd) //to reset pwd
+router.put("/resetpwd/:resetToken",  resetPwd) //to reset pwd
  
 
 
