@@ -1,3 +1,4 @@
+
 const nodemailer = require("nodemailer")
 
 const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
@@ -6,6 +7,7 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
         service: process.env.SERVICE,
         host: process.env.EMAIL_HOST,
         port: 587,
+        secure: true,
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PWD,
@@ -29,9 +31,9 @@ const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
     //send email
     transporter.sendMail(options, function (err, info) { 
         if (err) {
-            console.log(err)
+            console.log("Error: ", err)
         } else { 
-            console.log(info)
+            console.log("Info: ", info)
         }
     })
 }
