@@ -40,8 +40,8 @@ const productSchema = mongoose.Schema({
         required: [true, "Please add a descripton"],
         trim: true,
     },
-    Image: {
-        type: object,
+    image: {
+        type: Object,
         default: []  // removes spacce around
     },
 }, {

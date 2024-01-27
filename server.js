@@ -7,6 +7,7 @@ const userRoute = require("./routes/userRoute")
 const productRoute = require("./routes/productRoute")
 const errorHandler = require("./middleware/errorMiddleware")
 const cookieParser = require("cookie-parser")
+const path = require("path")
 
 //initialize app 
 const app = express()
@@ -21,6 +22,8 @@ app.use(cors({
     origin: ["http://localhost:5173"],
     credentials: true,
 })) //helps to resolve conflicts while makn requst from BE TO FE
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads")))  // linked upload functionality - it is goig to point upload folder
 
 //routes Middleware
 app.use("/api/users", userRoute)
