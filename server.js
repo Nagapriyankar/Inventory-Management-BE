@@ -23,7 +23,7 @@ app.use(cors({
     credentials: true,
 })) //helps to resolve conflicts while makn requst from BE TO FE
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")))  // linked upload functionality - it is goig to point upload folder
+app.use("/uploads", express.static(path.join(__dirname, "uploads")))  // linked file upload functionality - it is goig to point upload folder
 
 //routes Middleware
 app.use("/api/users", userRoute)

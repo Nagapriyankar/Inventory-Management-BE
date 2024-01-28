@@ -23,7 +23,7 @@ backend         :	render
 
 ### create Product route
     1.iport autthMiddleware to check authentication
-    2.import all controller schema
+    2.import all controller functions
     3.render the schema
     4.export router
 
@@ -50,8 +50,15 @@ backend         :	render
     6. Handle image upload in controller
         create a filesizeformatter function to convert size from bytes to kbytes in utility
         create file data - file name, path, type, size
-        add it to product create
-    
+        add it to product.create
+
+### cloudinary setup
+    1. create free cloudinary acnt
+    2. add cloudinary_url from programmable media- cloudinary to .env
+    3. import cloudinary in productController
+    4. save image to cloudinary
+    5. add uploadfile url in file data
+
 
 
 

@@ -7,7 +7,7 @@ const multer = require("multer")
 //define file storage - this piece of code is frm https://www.npmjs.com/package/multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {  //this defines where to store the file
-        cb(null, 'uploads')
+        cb(null, 'uploads')  //uploads folder is specified in server js
     },
     filename: function (req, file, cb) {   // this defines the file name
         cb(null, new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname)  // in date 27/01/2024 replace / globally wth -
