@@ -7,9 +7,10 @@ const jwt = require("jsonwebtoken")
 
 const protect = asyncHandler(async (req, res, next) => { 
     try {
+        
         //check if req comes with cookie
         const token = req.cookies.token
-
+        
         //if no token in the req
         if (!token) { 
             res.status(401)
@@ -17,8 +18,9 @@ const protect = asyncHandler(async (req, res, next) => {
         }
 
         //verify token -- if token and secret key is provided, it will return all the parameters passed while generating token
+        
         const verified = jwt.verify(token, process.env.JWT_SECRET)
-
+        
         //get user details by id -  verified contains id
         const user = await User.findById(verified.id).select("-password")   //except password , retrieve rest of the details from db
         
