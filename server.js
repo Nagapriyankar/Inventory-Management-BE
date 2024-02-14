@@ -21,10 +21,14 @@ app.use(express.urlencoded({ extended: false })) //help to handle data that come
 app.use(bodyParser.json()) //helps to parse the data passing from FE to BE, convert to object for easy access
 //app.use(cors({
 //    origin: ["https://inventorymanagementtool.netlify.app/"],
- //   credentials: true,
+//   credentials: true,
 //}))
 //helps to resolve conflicts while makn requst from BE TO FE
-app.use(cors())
+app.use(cors({
+    origin: 'https://inventorymanagementtool.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}))
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))  // linked file upload functionality - it is goig to point upload folder
 
