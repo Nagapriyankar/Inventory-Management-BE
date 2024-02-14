@@ -19,10 +19,12 @@ app.use(express.json()) //helps to handle json data in application
 app.use(cookieParser())  //to create http only cookie as response to front end
 app.use(express.urlencoded({ extended: false })) //help to handle data that comes via url
 app.use(bodyParser.json()) //helps to parse the data passing from FE to BE, convert to object for easy access
-app.use(cors({
-    origin: ["http://localhost:5173", "https://inventory-management.vercel.app", "https://inventory-management.onerender.com"],
-    credentials: true,
-})) //helps to resolve conflicts while makn requst from BE TO FE
+//app.use(cors({
+//    origin: ["https://inventorymanagementtool.netlify.app/"],
+ //   credentials: true,
+//}))
+//helps to resolve conflicts while makn requst from BE TO FE
+app.use(cors())
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))  // linked file upload functionality - it is goig to point upload folder
 
